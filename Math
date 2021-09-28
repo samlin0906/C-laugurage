@@ -3,6 +3,7 @@
 #include <stdio.h>
 int main(){
     int number, prime;
+    char string;
     printf("Pls enter number:");
     scanf("%d", &number);
     if(number == 1){
@@ -16,7 +17,7 @@ int main(){
                 printf("This is prime.");
     }
         }
-    } else if(number < 0){
+    } else if(number < 0 && number == string){
         printf("Pls enter positive number.");
     }
     return 0;
