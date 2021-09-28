@@ -1,0 +1,23 @@
+#質數
+
+#include <stdio.h>
+int main(){
+    int number, prime;
+    printf("Pls enter number:");
+    scanf("%d", &number);
+    if(number == 1){
+        printf("This is composite.");
+    } else if(number > 1){
+        for(prime = 2; prime <= number; prime = prime + 1){
+            if(number % prime == 0 && prime != number){
+                printf("This is composite.");
+                break;
+            } else if(number % prime == 0 && prime == number){
+                printf("This is prime.");
+    }
+        }
+    } else if(number < 0){
+        printf("Pls enter positive number.");
+    }
+    return 0;
+}
