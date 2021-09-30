@@ -22,3 +22,45 @@ int main(){
     }
     return 0;
 }
+
+
+
+//繪製三角形,偏右
+//解法一
+
+#include <stdio.h>
+int main(){
+    int number, i, j, k;
+    printf("Pls enter number:");
+    scanf("%d", &number);
+    for (i = 1; i <= number; i ++){
+        for (j = 1; j <= number- i; j ++){             // 先將空填滿
+            printf(" ");
+        }
+        for (k = 1; k <= i; k ++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+   
+//解法二
+//座標法
+
+#include <stdio.h>
+int main(){
+    int number, i, j, k;
+    printf("Pls enter number:");
+    scanf("%d", &number);
+    for (i = 1; i <= number; i ++){
+        for (j = 1; j <= number; j ++){           #先假設畫滿長方形
+            if ( i + j >= number + 1){            #斜線座標和等於number + 1(e.g. (1,5)(2, 4)), 斜線座標以下之和大於number + 1 
+                printf("*");
+        } else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
