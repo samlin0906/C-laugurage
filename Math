@@ -1,4 +1,4 @@
-#質數
+//質數
 
 #include <stdio.h>
 int main(){
