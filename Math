@@ -65,3 +65,24 @@ int main(){
     }
     return 0;
 }
+
+
+
+//費氏數列 || 費波那契數列
+#include <stdio.h>
+int s(int);
+
+int main(){
+    int number;
+    printf("Pls enter number:");
+    scanf("%d", &number);
+    printf("%d", s(number));
+    return 0;
+}
+
+int s(int number){
+    if (number <= 2){
+        return number;
+    }
+    return s(number - 1) + s(number - 2);
+}
