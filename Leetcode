@@ -1,3 +1,4 @@
+//009
 //palindrome integer 回文數
 
 bool isPalindrome(int x){
