@@ -10,6 +10,5 @@ bool isPalindrome(int x){
     }
     if (total == x)              // 需等於x 非 temp
         return true;
-    else 
-        return false;
+    return false;
 }
