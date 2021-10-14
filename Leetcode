@@ -1,5 +1,4 @@
-//009
-//palindrome integer 回文數
+//009 palindrome integer 回文數
 
 bool isPalindrome(int x){
     if (x < 0) 
@@ -12,4 +11,45 @@ bool isPalindrome(int x){
     if (total == x)              // 需等於x 非 temp
         return true;
     return false;
+}
+
+//014  Longest Common Prefix
+// 雙指標 二維
+//深度優先遍歷 縱向遍歷圖
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char * longestCommonPrefix(char ** strs, int strsSize){
+    int i, j, index, tempindex;                            
+    if (strsSize <= 1)
+        return *strs;                                   //不可寫""
+    index = strlen(strs[0]);                            //strlen不包含'\0'
+    char *a;
+    a = (char *)malloc(sizeof(char) * (index + 1));    //(char*)是用來轉換void類型的malloc; (index + 1)是將'\0'加入,以便後續停止運作
+    strcpy(a, strs[0]);                                //將strs[0]當作對照組
+    for (i = 1; i < strsSize; i++) {
+        tempindex = 0;
+        for (j = 0; j < index; j ++) {
+            if (a[j] == strs[i][j])
+                tempindex++;
+            else {                                    //不可寫else if, else 代表 false
+                a[j] = '\0';
+                break;
+            }
+
+        }
+        if (tempindex == 0)
+            return "";
+        if (tempindex <= index)
+            index = tempindex;                        //不可寫tempindx = index
+
+    }
+    return a;
+}
+
+int main () {
+    char *strs[] = {"f"};
+    printf("%s", longestCommonPrefix(strs, 1));
 }
