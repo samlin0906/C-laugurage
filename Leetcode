@@ -53,3 +53,46 @@ int main () {
     char *strs[] = {"f"};
     printf("%s", longestCommonPrefix(strs, 1));
 }
+
+//020 Valid Parentheses
+//stack, 後進先出
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+bool isValid(char * s){
+    int i, length, top = 0;
+    char *stack, c;
+    length = strlen(s);
+    stack = (char *) malloc(length);                           //malloc(size_t, size)
+    for (i = 0; i < length; ++ i) {
+        if (s[i] == ')') {
+            c = stack[--top];                                 //不可寫top--, 因為為stack算法,從最後一位開始算
+            if (c != '(')
+                return false;
+        }else if (s[i] == '}') {
+            c = stack[--top];
+            if (c != '{')
+                return false;
+        }else if (s[i] == ']') {
+            c = stack[--top];
+            if (c != '[')
+                return false;
+        } else {
+            stack[top++] = s[i];
+        }
+    }
+    free(stack);
+    return top == 0;
+}
+
+
+int main () {
+    char str[] = {"()}"};
+    if (isValid(str))
+        printf("True");
+    else
+        printf("False.");
+    return 0;
+}
