@@ -56,6 +56,7 @@ int main () {
 
 //020 Valid Parentheses
 //stack, 後進先出
+//需在每個迴圈加上 if (top == 0) return false, 要不然leetcode會判定runtime error; https://ithelp.ithome.com.tw/questions/10199167
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -84,7 +85,7 @@ bool isValid(char * s){
         }
     }
     free(stack);
-    return top == 0;
+    return top == 0;                                        //top重新歸0,以便main檔執行
 }
 
 
