@@ -46,6 +46,7 @@ char * longestCommonPrefix(char ** strs, int strsSize){
             index = tempindex;                        //不可寫tempindx = index
 
     }
+    free(a);
     return a;
 }
 
@@ -85,7 +86,7 @@ bool isValid(char * s){
         }
     }
     free(stack);
-    return top == 0;                                        //top重新歸0,以便main檔執行
+    return top == 0;                                        //top需重新歸0
 }
 
 
