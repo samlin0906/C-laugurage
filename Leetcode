@@ -86,7 +86,7 @@ bool isValid(char * s){
         }
     }
     free(stack);
-    return top == 0;                                        //top需重新歸0, 意味stack = []
+    return top == 0;                                        //top需重新歸0, 意味stack = []; #輸入值如果為空的話,判定True
 }
 
 
