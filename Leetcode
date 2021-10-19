@@ -98,3 +98,41 @@ int main () {
         printf("False.");
     return 0;
 }
+
+//021 Merge Two Sorted Lists
+//struct, Linked list 鏈結串列
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
+
+    struct ListNode head;
+    struct ListNode *h = &head;
+
+    if (l1 == NULL && l2 == NULL)
+        return NULL;
+
+    while (l1 && l2) {
+        if (l1->val < l2->val) {                         //尋找較小的節點                  
+            h->next = l1;
+            l1 = l1->next;
+        }
+        else {
+            h->next = l2;
+            l2 = l2->next;
+        }
+        h = h->next;
+    }
+    if (l1 != NULL)
+        h->next = l1;                                  //合併剩餘的list
+    if (l2 != NULL)
+        h->next = l2;
+    return head.next;
+
+}
