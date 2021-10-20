@@ -53,6 +53,7 @@ char * longestCommonPrefix(char ** strs, int strsSize){
 int main () {
     char *strs[] = {"f"};
     printf("%s", longestCommonPrefix(strs, 1));
+    return 0;
 }
 
 //020 Valid Parentheses
@@ -160,5 +161,5 @@ int main () {
     int size;
     size = sizeof(a) / sizeof(a[0]);
     printf("%d", removeDuplicates(a, size));
-
+    return 0;
 }
