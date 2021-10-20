@@ -15,7 +15,7 @@ bool isPalindrome(int x){
 
 //014  Longest Common Prefix
 //雙指標 二維
-//深度優先遍歷 縱向遍歷圖
+//二元數 深度優先遍歷 縱向遍歷圖
 
 #include <stdio.h>
 #include <stdlib.h>
