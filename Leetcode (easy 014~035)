@@ -22,7 +22,7 @@ bool isPalindrome(int x){
 #include <string.h>
 
 char * longestCommonPrefix(char ** strs, int strsSize){
-    int i, j, index, tempindex;                            
+    int i, j, index, count;                            
     if (strsSize <= 1)
         return *strs;                                   //不可寫""
     index = strlen(strs[0]);                            //strlen不包含'\0'
@@ -30,20 +30,20 @@ char * longestCommonPrefix(char ** strs, int strsSize){
     a = (char *)malloc(sizeof(char) * (index + 1));    //(char*)是用來轉換void類型的malloc; (index + 1)是將'\0'加入,以便後續停止運作
     strcpy(a, strs[0]);                                //將strs[0]當作對照組
     for (i = 1; i < strsSize; i++) {
-        tempindex = 0;
+        count = 0;
         for (j = 0; j < index; j ++) {
             if (a[j] == strs[i][j])
-                tempindex++;
+                count++;
             else {                                    //不可寫else if, else 代表 false
                 a[j] = '\0';
                 break;
             }
 
         }
-        if (tempindex == 0)
+        if (count == 0)
             return "";
-        if (tempindex <= index)
-            index = tempindex;                        //不可寫tempindx = index
+        if (count <= index)
+            index = count;                        //不可寫count = index
 
     }
     free(a);
