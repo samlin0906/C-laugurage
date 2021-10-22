@@ -1,0 +1,18 @@
+//053 Maximum Subarray
+//Dynamic programming (DP) 動態規劃
+//與二元樹類似,皆以array[0]當作比較基準點,並記數,差異點為DP需來回不斷驗證,時間複雜度增加
+
+int maxSubArray(int* nums, int numsSize) {
+
+    int i, sum = 0, max = nums[0];
+
+    for (i = 0; i < numsSize; i++) {
+        if (sum >= 0)
+            sum = sum + nums[i];
+        else
+            sum = nums[i];
+        if (sum > max)
+            max = sum;
+    }
+    return max;
+}
