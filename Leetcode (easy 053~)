@@ -28,10 +28,10 @@ int* plusOne(int* digits, int digitsSize, int* returnSize) {
     int i;
     for (i = digitsSize - 1; i >= 0; i--) {
         if (digits[i] != 9) {
-            digits[i]++;                                        //有非9就加1, 然後停止運算
+            digits[i]++;                                        //有非9就加1, 然後停止運算; digits[i] = digits[i] + 1
             break;
         }
-        digits[i] = 0;
+        digits[i] = 0;                                         //凡是9的部分全變成0
     }
     if(digits[0] == 0) {
         int j = 0, *array;
