@@ -16,3 +16,44 @@ int maxSubArray(int* nums, int numsSize) {
     }
     return max;
 }
+
+//066 Plus One
+//十進位制
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int* plusOne(int* digits, int digitsSize, int* returnSize) {
+
+    int i;
+    for (i = digitsSize - 1; i >= 0; i--) {
+        if (digits[i] != 9) {
+            digits[i]++;                                        //有非9就加1, 然後停止運算
+            break;
+        }
+        digits[i] = 0;
+    }
+    if(digits[0] == 0) {
+        int j = 0, *array;
+        array = (int *) malloc(sizeof(int) *(digitsSize + 1));
+        array[0] = 1;
+        for (i = 1; i < digitsSize + 1; i ++) {
+            array[i] = digits[j++];
+        }
+        *returnSize = digitsSize + 1;
+        return array;
+    }
+    *returnSize = digitsSize;                              //不須free(), 因為malloc為local
+    return digits;
+}
+
+int main () {
+    int a[] = {4, 8, 9};
+    int i, *array, size, resize = 0;
+    size = sizeof(a) / sizeof(a[0]);
+    array = plusOne(a, size, &resize);
+    for (i = 0; i < resize; i++) {
+        printf("%d", array[i]);
+    }
+    return 0;
+}
