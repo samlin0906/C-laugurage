@@ -1,3 +1,54 @@
+//009 Palindrome Number
+//回文數
+
+bool isPalindrome(int x){
+    if (x < 0) 
+        return false;
+    long int temp = x, total = 0;                            // 需設long int
+    while (temp != 0) {
+        total = total * 10 + temp % 10;
+        temp = temp / 10;
+    }
+    if (total == x)                                         // 需等於x 非 temp
+        return true;
+    return false;
+}
+
+//070 Climbing Stairs
+//費氏數列 || 費波那契數列
+
+int climbStairs(int n){
+
+    int i, temp,step_1 = 0, step_2 = 1;
+
+    for (i = 1; i <= n; i ++) {                          // n >= 1, 因此i = 1; if n = 1, output = 1
+        temp = step_2;
+        step_2 = step_1 + step_2;
+        step_1 = temp;
+    }
+    return step_2;
+}
+
+
+#include <stdio.h>
+int s(int);
+
+int main(){
+    int number;
+    printf("Pls enter number:");
+    scanf("%d", &number);
+    printf("%d", s(number));
+    return 0;
+}
+
+int s(int number){
+    if (number <= 2){
+        return number;
+    }
+    return s(number - 1) + s(number - 2);
+}
+
+
 //質數
 
 #include <stdio.h>
@@ -66,54 +117,3 @@ int main(){
     return 0;
 }
 
-//009 Palindrome Number
-//回文數
-
-bool isPalindrome(int x){
-    if (x < 0) 
-        return false;
-    long int temp = x, total = 0;                            // 需設long int
-    while (temp != 0) {
-        total = total * 10 + temp % 10;
-        temp = temp / 10;
-    }
-    if (total == x)                                         // 需等於x 非 temp
-        return true;
-    return false;
-}
-
-
-
-//費氏數列 || 費波那契數列
-#include <stdio.h>
-int s(int);
-
-int main(){
-    int number;
-    printf("Pls enter number:");
-    scanf("%d", &number);
-    printf("%d", s(number));
-    return 0;
-}
-
-int s(int number){
-    if (number <= 2){
-        return number;
-    }
-    return s(number - 1) + s(number - 2);
-}
-
-//070 Climbing Stairs
-//費氏數列 || 費波那契數列
-
-int climbStairs(int n){
-
-    int i, temp,step_1 = 0, step_2 = 1;
-
-    for (i = 1; i <= n; i ++) {                          // n >= 1, 因此i = 1; if n = 1, output = 1
-        temp = step_2;
-        step_2 = step_1 + step_2;
-        step_1 = temp;
-    }
-    return step_2;
-}
