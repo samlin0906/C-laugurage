@@ -36,7 +36,7 @@ int mySqrt(int x) {
     long mid;
 
     while (low <= high) {
-        mid = low + (high - low) / 2;                     ////直接平均可能會溢位
+        mid = low + (high - low) / 2;                     //直接平均可能會溢位
         if (mid * mid == x)                              //需等於x而非target, 因為target會不斷變動
             return mid;
         else if (mid * mid < x)
