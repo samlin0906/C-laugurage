@@ -6,7 +6,7 @@ int searchInsert(int* nums, int numsSize, int target){
 
     int low = 0;
     int high = numsSize - 1;                               // for (i =0; i < numsSize; i++)
-    int mid = (low + high) / 2;                   
+    int mid = low + (high - low) / 2;                   
 
     while (low <= high) {
         mid = (low + high)/2;
