@@ -7,7 +7,7 @@ int searchInsert(int* nums, int numsSize, int target){
 
     int low = 0;
     int high = numsSize - 1;                               // for (i =0; i < numsSize; i++)
-    int mid;                   
+    int mid;                                               // 直接在while迴圈設公式即可,不影響時間及空間
 
     while (low <= high) {
         mid = low + (high - low) / 2;
