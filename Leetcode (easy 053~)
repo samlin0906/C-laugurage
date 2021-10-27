@@ -104,3 +104,18 @@ int mySqrt(int x) {
     }
     return high;                                       //題目要求小數點後無條件捨去,如果return low, 8的平方根會變成3
 }
+
+//070 Climbing Stairs
+//費氏數列/ 費波那契數列
+
+int climbStairs(int n){
+
+    int i, temp,step_1 = 0, step_2 = 1;
+
+    for (i = 1; i <= n; i ++) {                          // n >= 1, 因此i = 1; if n = 1, output = 1
+        temp = step_2;
+        step_2 = step_1 + step_2;
+        step_1 = temp;
+    }
+    return step_2;
+}
