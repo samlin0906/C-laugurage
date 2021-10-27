@@ -1,6 +1,7 @@
 //035 Search Insert Position
 //sorted array
 //O(log n)
+//使用順序查找法更快
 
 int searchInsert(int* nums, int numsSize, int target){
 
