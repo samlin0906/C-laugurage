@@ -86,3 +86,18 @@ int s(int number){
     }
     return s(number - 1) + s(number - 2);
 }
+
+//070 Climbing Stairs
+//費氏數列 || 費波那契數列
+
+int climbStairs(int n){
+
+    int i, temp,step_1 = 0, step_2 = 1;
+
+    for (i = 1; i <= n; i ++) {                          // n >= 1, 因此i = 1; if n = 1, output = 1
+        temp = step_2;
+        step_2 = step_1 + step_2;
+        step_1 = temp;
+    }
+    return step_2;
+}
