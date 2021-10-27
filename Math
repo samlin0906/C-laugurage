@@ -72,12 +72,12 @@ int main(){
 bool isPalindrome(int x){
     if (x < 0) 
         return false;
-    long int temp = x, total = 0;
+    long int temp = x, total = 0;                            // 需設long int
     while (temp != 0) {
         total = total * 10 + temp % 10;
         temp = temp / 10;
     }
-    if (total == x) 
+    if (total == x)                                         // 需等於x 非 temp
         return true;
     return false;
 }
