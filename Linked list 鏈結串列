@@ -19,7 +19,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
 
     while (l1 != NULL && l2 != NULL) {
         if (l1->val < l2->val) {                         //尋找較小的節點                  
-            h->next = l1;
+            h->next = l1;                                //不能簡寫為h ->next = l1 ->next
             l1 = l1->next;
         }
         else {
