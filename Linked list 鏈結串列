@@ -1,5 +1,6 @@
 //021 Merge Two Sorted Lists
 //struct, Linked list 鏈結串列
+//Doubly Linked List 雙向鏈結
 
 /**
  * Definition for singly-linked list.
