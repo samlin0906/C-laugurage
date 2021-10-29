@@ -12,7 +12,7 @@
 
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
 
-    struct ListNode head;
+    struct ListNode head;                                      //python: head = ListNode(0)
     struct ListNode *h = &head;                               //head無指標,因此需加入讀取指標位址
 
     if (l1 == NULL && l2 == NULL)
