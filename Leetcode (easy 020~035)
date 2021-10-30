@@ -44,6 +44,7 @@ int main () {
 
 //026 Remove Duplicates from Sorted Array
 //in-place algorithm 原地演算法
+//Counting Sort 計數排序法
 //為避免增加記憶體(新增array), 直接重設計數
 
 
