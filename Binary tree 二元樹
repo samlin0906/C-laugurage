@@ -41,6 +41,48 @@ int main () {
     return 0;
 }
 
+//094 Binary Tree Inorder Traversal
+//Inorder Traversal 中序遍歷
+//Iterative Approach
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+ 
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+
+int* inorderTraversal(struct TreeNode* root, int* returnSize) {
+
+    int *result = NULL;
+    *returnSize = 0;
+
+    struct TreeNode **stack = (struct TreeNode **) malloc(sizeof(struct TreeNode *));
+    struct TreeNode *pop;
+    int length = 0, state = 1;
+
+    while (length > 0 || root != NULL) {
+        if (root) {                                                                                         //走訪左子樹
+            stack = (struct TreeNode **) realloc(stack, sizeof(struct TreeNode *) * (length + 1));
+            stack[length++] = root;                                                                         //紀錄父節點
+            root = root->left;
+        } else {
+            root = stack[--length];                                                                        //回到父節點
+            result = (int *) realloc(result, sizeof(int) * (*returnSize + 1));
+            result[*returnSize] = root->val;                                                               //走訪父節點
+            *returnSize += 1;
+            root = root->right;                                                                            //走訪右子樹
+        }
+    }
+    return result;
+}
+
 //100 Same Tree
 
 #include <stdlib.h>
