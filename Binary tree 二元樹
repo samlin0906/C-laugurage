@@ -60,7 +60,7 @@ int main () {
 
 int* inorderTraversal(struct TreeNode* root, int* returnSize) {
 
-    int *result = NULL;
+    int *result = NULL;                                                                                   //if (root = NULL) return 0;
     *returnSize = 0;
 
     struct TreeNode **stack = (struct TreeNode **) malloc(sizeof(struct TreeNode *));
